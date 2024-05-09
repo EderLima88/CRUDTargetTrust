@@ -1,0 +1,18 @@
+
+# isso PHP nao vai entender!
+# echo ($r['F.ID_FUNCIONARIO'] );
+# precisamos dar um alias para cada atributo
+# echo ($r['nome_func']);
+
+
+SELECT F.ID_FUNCIONARIO AS id_funcionario,
+       F.NOME AS nome_func, 
+       F.DT_NASCIMENTO AS dt_nascimento,
+       F.DT_ADMISSAO AS dt_admissao,
+       F.GENERO AS genero,
+       F.SALARIO AS salario,
+       F.ID_DEPARTAMENTO AS id_depto,
+       D.NOME AS nome_depto
+	FROM FUNCIONARIOS AS F
+    INNER JOIN DEPARTAMENTOS AS D
+    ON F.ID_DEPARTAMENTO = D.ID_DEPARTAMENTO;
